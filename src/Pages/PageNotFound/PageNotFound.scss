@@ -1,0 +1,27 @@
+h1 {
+    height: 500px;
+    text-align: center;
+    padding-top: 150px;
+}
+
+.button__link {
+    text-decoration: none;
+
+    .button__go-back {
+        padding: 12px 0 14px;
+        background-color: #262626;
+        border-radius: 25px;
+        width: 200px;
+        text-decoration: none;
+        color: #fff;
+        margin: 0 auto;
+        font-weight: 600;
+        font-size: 18px;
+        transition: .4s all;
+
+        &:hover {
+            opacity: .9;
+        }
+
+    }
+}

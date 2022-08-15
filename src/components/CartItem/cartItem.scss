@@ -1,0 +1,139 @@
+.cart__divider {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 95%;
+    height: 1px;
+    background-color: #aeaeae;
+}
+
+.cart__item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+
+    &-descr {
+        display: flex;
+        align-items: center;
+
+        .item-img {
+            border-radius: 5px;
+            border: 1px solid rgb(166, 166, 166);
+            width: 100px;
+        }
+    }
+
+    .item-info {
+        margin-left: 20px;
+
+        &_name {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: .01em;
+            line-height: 27px;
+        }
+
+        &_type {
+            font-size: 14px;
+        }
+    }
+
+    &-counter {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-size: 18px;
+
+        span {
+            margin: 15px;
+        }
+
+        .minus_button {
+            align-items: center;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            display: flex;
+            height: 32px;
+            justify-content: center;
+            width: 32px;
+            cursor: pointer;
+
+            svg {
+                width: 15px;
+                height: 15px;
+                fill: #ddd;
+            }
+        }
+
+        .pluss_button {
+            align-items: center;
+            border: 2px solid #c91a34;
+            border-radius: 25px;
+            display: flex;
+            height: 32px;
+            justify-content: center;
+            width: 32px;
+            cursor: pointer;
+            transition: .3s all;
+
+            svg {
+                width: 15px;
+                height: 15px;
+                fill: #c91a34;
+            }
+
+            &:hover {
+                background-color: #c91a34;
+
+                svg {
+
+                    fill: rgb(255, 255, 255);
+                }
+            }
+        }
+    }
+
+    &-price {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &-remove_button {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        .remove_button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            transition: .3s all;
+
+            svg {
+                width: 15px;
+                height: 15px;
+                transform: rotate(45deg);
+                fill: #ddd;
+            }
+
+            &:hover {
+                background-color: #1e1e1e;
+                border-color: #1e1e1e;
+
+                svg {
+
+                    fill: rgb(255, 255, 255);
+                }
+            }
+        }
+
+
+    }
+}

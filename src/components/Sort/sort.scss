@@ -1,0 +1,44 @@
+.sort {
+    position: relative;
+    margin-top: 5px;
+    margin-right: 50px;
+
+    &__popup {
+        position: absolute;
+        right: 0;
+        margin-top: 15px;
+        background: #ffffff;
+        box-shadow: 0px 5px 15px rgb(0 0 0 / 9%);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 10px 0;
+        width: 160px;
+        transition: .5s all;
+
+        &-list {
+            &-item {
+                padding: 12px 25px;
+                cursor: pointer;
+
+                &:hover {
+                    background: rgba(254, 95, 30, 0.05);
+                }
+
+                &-active {
+                    font-weight: bold;
+                    color: #c5142f;
+                    background: rgba(254, 95, 30, 0.05);
+                }
+            }
+        }
+
+    }
+
+    &__block {
+        span {
+            color: #c5142f;
+            border-bottom: 1px dashed #c5142f;
+            cursor: pointer;
+        }
+    }
+}

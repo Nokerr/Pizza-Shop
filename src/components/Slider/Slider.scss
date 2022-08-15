@@ -1,0 +1,19 @@
+img {
+    border-radius: 25px;
+}
+
+.slider__wrapper {
+    margin: 0 auto;
+
+}
+
+.slick-slider {
+    max-width: 1280px;
+    z-index: 1;
+}
+
+.slick-slide {
+    img {
+        width: 100%;
+    }
+}

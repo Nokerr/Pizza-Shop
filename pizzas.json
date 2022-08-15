@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "img": "/img/pizza-img/manhatten.jpg",
+        "name": "Pizza Manhattan",
+        "description": "(double serving of mushrooms), Mushrooms, Mozarella, Peperoni, Al'fredo sauce",
+        "size": [
+            "Standart size",
+            "Large"
+        ],
+        "crustType": [
+            "Standart crust",
+            "Thin",
+            "Philadelphia",
+            "Hot-Dog-Crust"
+        ],
+        "price": [
+            [
+                215,
+                210,
+                259,
+                268
+            ],
+            [
+                254,
+                250,
+                307,
+                314
+            ]
+        ],
+        "rating": 2,
+        "category": 0
+    },
+    {
+        "id": 2,
+        "img": "/img/pizza-img/pepperoni.jpg",
+        "name": "Pizza Pepperoni with tomatoes",
+        "description": "Mozarella, Peperoni, Tomatoes, BBQ sauce",
+        "size": [
+            "Standart size",
+            "Large"
+        ],
+        "crustType": [
+            "Standart crust",
+            "Thin",
+            "Philadelphia",
+            "Hot-Dog-Crust"
+        ],
+        "price": [
+            [
+                215,
+                210,
+                259,
+                268
+            ],
+            [
+                254,
+                250,
+                307,
+                314
+            ]
+        ],
+        "rating": 4,
+        "category": 1
+    },
+    {
+        "id": 3,
+        "img": "/img/pizza-img/margarita.jpg",
+        "name": "Pizza Margarita",
+        "description": "(double serving of mozarella), Mozarella, Domino's sauce",
+        "size": [
+            "Standart size",
+            "Large"
+        ],
+        "crustType": [
+            "Standart crust",
+            "Thin",
+            "Philadelphia",
+            "Hot-Dog-Crust"
+        ],
+        "price": [
+            [
+                215,
+                210,
+                259,
+                268
+            ],
+            [
+                254,
+                250,
+                307,
+                314
+            ]
+        ],
+        "rating": 9,
+        "category": 0
+    },
+    {
+        "id": 4,
+        "img": "/img/pizza-img/jamaica.jpg",
+        "name": "Pizza Jamaica Bombastic",
+        "description": "Chicken, Corn, Jalapeno, Pineapple, Sweet pepper, Mushrooms, Mozarella, Domino's sauce",
+        "size": [
+            "Standart size",
+            "Large"
+        ],
+        "crustType": [
+            "Standart crust",
+            "Thin",
+            "Philadelphia",
+            "Hot-Dog-Crust"
+        ],
+        "price": [
+            [
+                215,
+                210,
+                259,
+                268
+            ],
+            [
+                254,
+                250,
+                307,
+                314
+            ]
+        ],
+        "rating": 5,
+        "category": 1
+    },
+    {
+        "id": 5,
+        "img": "/img/pizza-img/bbq.jpg",
+        "name": "Pizza BBQ Delux",
+        "description": "Meatballs, Onion, Sweet pepper, Mushrooms, Mozarella, Parmesan, Peperoni, BBQ sauce",
+        "size": [
+            "Standart size",
+            "Large"
+        ],
+        "crustType": [
+            "Standart crust",
+            "Thin",
+            "Philadelphia",
+            "Hot-Dog-Crust"
+        ],
+        "price": [
+            [
+                215,
+                210,
+                259,
+                268
+            ],
+            [
+                254,
+                250,
+                307,
+                314
+            ]
+        ],
+        "rating": 7,
+        "category": 2
+    }
+]

@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+    margin-right: 0;
+
+    padding: 0px;
+    font-family: Roboto, sans-serif;
+
+
+}
+
+
+.container {
+
+    width: 1350px;
+
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+#root {
+
+    background: #f8f8f8;
+
+}
+
+.category__bar {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
