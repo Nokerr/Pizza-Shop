@@ -4,9 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setActiveCategory } from '../../redux/filters/filtersSlice'
 
 
-function Categories() {
+const Categories: React.FC = () => {
 
-    const activeCategory = useSelector(state => state.filter.categoryId)
+    const activeCategory = useSelector((store: any) => store.filter.categoryId)
     const dipatch = useDispatch();
 
     const categoriesList = [
@@ -24,7 +24,7 @@ function Categories() {
                 (
                     <li
                         key={index}
-                        className={activeCategory === index ? 'active' : null}
+                        className={activeCategory === index ? 'active' : ''}
                         onClick={() => dipatch(setActiveCategory(index))}>
                         {category}
                     </li>

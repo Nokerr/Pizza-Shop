@@ -6,6 +6,8 @@ import CollapsList from '../CollapseList/CollapsList';
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsopendCollapse } from '../../redux/collapsList/collapsListSlice';
+import { selectCard } from '../../redux/cart/selectors';
+import { selectCollaps } from '../../redux/collapsList/selectors';
 
 
 
@@ -13,8 +15,8 @@ const NavBar = () => {
 
     const dispatch = useDispatch();
 
-    const { totalCount, totalPrice, items } = useSelector(state => state.cart)
-    const { isOpenedCollapse } = useSelector(state => state.collaps)
+    const { totalCount, totalPrice, items } = useSelector(selectCard)
+    const { isOpenedCollapse } = useSelector(selectCollaps)
 
     // const [isOpenedCollapse, setIsopendCollapse] = useState(false)
 

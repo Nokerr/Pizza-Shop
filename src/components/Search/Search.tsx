@@ -1,21 +1,21 @@
 import React, { useCallback, useState } from 'react';
 import styles from './search.module.scss';
-import { debouns } from './debouns';
+import { debounce } from './debounce';
 import { setSearchValue } from '../../redux/filters/filtersSlice';
 import { useDispatch } from 'react-redux';
 
-const Search = () => {
+const Search: React.FC = () => {
     const dispatch = useDispatch();
     const [inputValue, setInputValue] = useState('');
 
     const updateSearchValue = useCallback(
-        debouns(str => {
+        debounce((str: string) => {
             dispatch(setSearchValue(str))
         }, 300),
         []
     )
 
-    const onChangeInput = e => {
+    const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value)
         updateSearchValue(e.target.value)
 

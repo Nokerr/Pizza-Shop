@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { type } from "os";
 
-const initialState = {
+type CollapsList = {
+    isOpenedCollapse: boolean
+}
+
+const initialState: CollapsList = {
     isOpenedCollapse: false,
 }
 

@@ -3,13 +3,14 @@ import './cart.scss'
 import CartItem from '../../components/CartItem/CartItem';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { cleareItemList } from '../../redux/cart/cartSlice';
+import { cleareItemList } from '../../redux/cart/cartSlice.';
 import { setIsopendCollapse } from '../../redux/collapsList/collapsListSlice';
 import EmptyCart from '../../components/EmptyCart/EmptyCart';
+import { RootState } from '../../redux/store';
 const Card = () => {
 
     const dispatch = useDispatch();
-    const { items, totalCount, totalPrice } = useSelector(state => state.cart)
+    const { items, totalCount, totalPrice } = useSelector((state: RootState) => state.cart)
 
     const removeAllItems = () => {
         dispatch(cleareItemList());

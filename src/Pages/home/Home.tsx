@@ -6,17 +6,18 @@ import PizzaListItem from '../../components/PizzaListItem/PizzaListItem';
 import './home.scss'
 import Spinner from '../../components/Spinner/Spinner';
 import Search from '../../components/Search/Search';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { fetchItems } from '../../redux/pizza/pizzaSlice'
+import { RootState, useAppDispatch } from '../../redux/store';
 
 const Home = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
-    const activeCategory = useSelector(state => state.filter.categoryId)
-    const sortCategory = useSelector(state => state.filter.sort)
-    const searchValue = useSelector(state => state.filter.searchValue)
-    const { items, itemsFetchState } = useSelector(state => state.pizza)
+    const activeCategory = useSelector((state: any) => state.filter.categoryId)
+    const sortCategory = useSelector((state: RootState) => state.filter.sort)
+    const searchValue = useSelector((state: RootState) => state.filter.searchValue)
+    const { items, status } = useSelector((state: RootState) => state.pizza)
 
 
     const fetchPizzas = async () => {
@@ -46,7 +47,7 @@ const Home = () => {
             </div>
             <div className="container">
                 {
-                    itemsFetchState === 'loading' ? <Spinner /> :
+                    status === 'loading' ? <Spinner /> :
                         <div className="pizza__list">
                             {
                                 items.length > 0 ?

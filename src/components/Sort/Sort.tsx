@@ -2,30 +2,37 @@ import React, { useState, useRef, useEffect } from 'react';
 import './sort.scss'
 import { useSelector, useDispatch } from 'react-redux';
 import { setsortCategory } from '../../redux/filters/filtersSlice'
+import { SortPropertyEnum, SortTypes } from '../../redux/filters/types';
+import { RootState } from '../../redux/store';
 
-const sortListItems = [
-    { name: 'popularity', sortSelector: 'rating' },
-    { name: 'price', sortSelector: 'price' },
-    { name: 'name', sortSelector: 'name' }
+const sortListItems: SortList[] = [
+    { name: 'popularity', sortSelector: SortPropertyEnum.RATING_DESC },
+    { name: 'price', sortSelector: SortPropertyEnum.PRICE_DESC },
+    { name: 'name', sortSelector: SortPropertyEnum.TITLE_DESC }
 ]
 
-const Sort = () => {
-    const sortRef = useRef();
+type SortList = {
+    name: string;
+    sortSelector: SortPropertyEnum;
+}
 
-    const value = useSelector(state => state.filter.sort);
+const Sort = () => {
+    const sortRef = useRef<HTMLDivElement>(null);
+
+    const value = useSelector((state: RootState) => state.filter.sort);
     const dispatch = useDispatch();
 
     const [showPopup, setShowPopup] = useState(false)
 
-    const changeCategory = (i) => {
+    const changeCategory = (i: SortTypes) => {
         dispatch(setsortCategory(i))
         setShowPopup(!showPopup)
     }
 
     useEffect(() => {
 
-        const outsideHandleClick = (e) => {
-            if (!e.path.includes(sortRef.current)) {
+        const outsideHandleClick = (e: MouseEvent) => {
+            if (sortRef.current && !e.composedPath().includes(sortRef.current)) {
                 setShowPopup(false)
             }
         }

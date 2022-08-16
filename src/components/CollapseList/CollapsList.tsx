@@ -1,8 +1,9 @@
 import React from 'react';
-import { addItem, minusItem, removeItem } from '../../redux/cart/cartSlice';
+import { addItem, minusItem, removeItem } from '../../redux/cart/cartSlice.';
 import { useDispatch } from 'react-redux';
+import { CartItemType } from '../../redux/cart/types';
 
-const CollapsList = ({ id, name, description, price, size, count }) => {
+const CollapsList: React.FC<CartItemType> = ({ id, name, description, price, size, count }) => {
 
     const dispatch = useDispatch();
 

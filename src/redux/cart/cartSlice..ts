@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { CartSliceState } from "./types";
 
-const initialState = {
+const initialState: CartSliceState = {
     items: [],
     totalCount: 0,
     totalPrice: 0,
@@ -36,7 +37,7 @@ const cartSlice = createSlice({
                 findItem.count--
             }
 
-            if (findItem.count < 1) {
+            if (findItem && findItem.count < 1) {
                 state.items = state.items.filter(item => item.id !== findItem.id)
             }
 
