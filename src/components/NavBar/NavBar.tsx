@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import './navBar.scss'
 import { Collapse } from 'react-collapse';
@@ -18,7 +18,18 @@ const NavBar = () => {
     const { totalCount, totalPrice, items } = useSelector(selectCard)
     const { isOpenedCollapse } = useSelector(selectCollaps)
 
-    // const [isOpenedCollapse, setIsopendCollapse] = useState(false)
+    const isMounted = useRef(false);
+
+    useEffect(() => {
+
+        if (isMounted.current) {
+            const cartItems = JSON.stringify(items)
+            localStorage.setItem('cart', cartItems)
+        }
+        isMounted.current = true
+
+    }, [items])
+
 
     useEffect(() => {
         if (totalCount > 0) {

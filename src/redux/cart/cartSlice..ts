@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { CartSliceState } from "./types";
+import { calcTotalCount } from "../../utils/calcTotalCount";
+import { calcTotalPrice } from "../../utils/calcTotalPrice";
+import { getCartFromLS } from "../../utils/getCartFromLS";
 
-const initialState: CartSliceState = {
-    items: [],
-    totalCount: 0,
-    totalPrice: 0,
-}
+const initialState: CartSliceState = getCartFromLS()
 
 const cartSlice = createSlice({
     name: 'cart',
@@ -20,13 +19,9 @@ const cartSlice = createSlice({
                 state.items.push({ ...action.payload, count: 1 })
             }
 
-            state.totalPrice = state.items.reduce((sum, obj) => {
-                return (obj.price * obj.count) + sum
-            }, 0)
+            state.totalPrice = calcTotalPrice(state.items)
 
-            state.totalCount = state.items.reduce((sum, obj) => {
-                return obj.count + sum
-            }, 0)
+            state.totalCount = calcTotalCount(state.items)
         },
 
         minusItem(state, action) {
@@ -41,37 +36,25 @@ const cartSlice = createSlice({
                 state.items = state.items.filter(item => item.id !== findItem.id)
             }
 
-            state.totalPrice = state.items.reduce((sum, obj) => {
-                return (obj.price * obj.count) + sum
-            }, 0)
+            state.totalPrice = calcTotalPrice(state.items)
 
-            state.totalCount = state.items.reduce((sum, obj) => {
-                return obj.count + sum
-            }, 0)
+            state.totalCount = calcTotalCount(state.items)
         },
 
         removeItem(state, action) {
             state.items = state.items.filter(item => item.id !== action.payload)
 
-            state.totalPrice = state.items.reduce((sum, obj) => {
-                return (obj.price * obj.count) + sum
-            }, 0)
+            state.totalPrice = calcTotalPrice(state.items)
 
-            state.totalCount = state.items.reduce((sum, obj) => {
-                return obj.count + sum
-            }, 0)
+            state.totalCount = calcTotalCount(state.items)
         },
 
         cleareItemList(state) {
             state.items = []
 
-            state.totalPrice = state.items.reduce((sum, obj) => {
-                return (obj.price * obj.count) + sum
-            }, 0)
+            state.totalPrice = calcTotalPrice(state.items)
 
-            state.totalCount = state.items.reduce((sum, obj) => {
-                return obj.count + sum
-            }, 0)
+            state.totalCount = calcTotalCount(state.items)
         }
 
     }
