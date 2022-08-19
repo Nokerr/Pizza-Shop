@@ -10,24 +10,23 @@ import { selectCollaps } from '../../redux/collapsList/selectors';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 
 
+const NavBar: React.FC = () => {
 
-const NavBar = () => {
-
+    const isMounted = useRef(false);
     const dispatch = useAppDispatch();
+
+    const [scroll, setScroll] = useState(true);
 
     const { totalCount, totalPrice, items } = useAppSelector(selectCard)
     const { isOpenedCollapse } = useAppSelector(selectCollaps)
 
-    const isMounted = useRef(false);
 
     useEffect(() => {
-
         if (isMounted.current) {
             const cartItems = JSON.stringify(items)
             localStorage.setItem('cart', cartItems)
         }
         isMounted.current = true
-
     }, [items])
 
 
@@ -40,20 +39,17 @@ const NavBar = () => {
     }, [totalCount])
 
 
-    const changeCollaps = () => {
-        dispatch(setIsopendCollapse(!isOpenedCollapse))
-    }
-
-
-
-    const [scroll, setScroll] = useState(true);
-
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY < 50);
         });
 
     }, []);
+
+
+    const changeCollaps = () => {
+        dispatch(setIsopendCollapse(!isOpenedCollapse))
+    }
 
 
     return (

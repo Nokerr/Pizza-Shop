@@ -11,9 +11,11 @@ const CollapsList: React.FC<CartItemType> = ({ id, name, description, price, siz
         dispatch(addItem({ id }))
     }
 
+
     const minusCounter = () => {
         dispatch(minusItem(id))
     }
+
 
     const removePizza = () => {
         dispatch(removeItem(id))

@@ -6,8 +6,11 @@ import { useAppDispatch } from '../../hooks/hook';
 
 
 const Search: React.FC = () => {
+
     const dispatch = useAppDispatch();
+
     const [inputValue, setInputValue] = useState('');
+
 
     const updateSearchValue = useCallback(
         debounce((str: string) => {
@@ -16,11 +19,13 @@ const Search: React.FC = () => {
         []
     )
 
+
     const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value)
         updateSearchValue(e.target.value)
 
     }
+
 
     const clearInput = () => {
         dispatch(setSearchValue(''))

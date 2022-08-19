@@ -3,7 +3,7 @@ import filter from './filters/filtersSlice';
 import cart from './cart/cartSlice.';
 import collaps from './collapsList/collapsListSlice'
 import pizza from './pizza/pizzaSlice'
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+
 
 export const store = configureStore({
     reducer: {

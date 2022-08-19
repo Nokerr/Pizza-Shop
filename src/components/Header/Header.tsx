@@ -4,7 +4,9 @@ import location_icon from '../../assets/icons/location-icon.png';
 import phone_icon from '../../assets/icons/phone_icon.png';
 
 
-const Header = () => {
+const Header: React.FC = () => {
+
+
     return (
         <header className='fake-header'>
             <div className="container">

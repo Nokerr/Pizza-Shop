@@ -3,12 +3,13 @@ import './emptyCart.scss';
 import { Link } from 'react-router-dom';
 import cartEmptyImg from '../../assets/icons/empty-cart.png';
 
-const EmptyCart = () => {
+const EmptyCart: React.FC = () => {
+
+
     return (
         <>
             <div className="cart cart--empty">
                 <h2>
-
                     Cart is empty <span>😕</span>
                 </h2>
                 <p>

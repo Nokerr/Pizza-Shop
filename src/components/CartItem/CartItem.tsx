@@ -13,13 +13,16 @@ const CartItem: React.FC<CartItemType> = ({ id, name, price, img, size, crustTyp
         dispatch(addItem({ id }))
     }
 
+
     const minusCounter = () => {
         dispatch(minusItem(id))
     }
 
+
     const removePizza = () => {
         dispatch(removeItem(id))
     }
+
 
     return (
         <>

@@ -7,7 +7,6 @@ const initialState: PizzaSliceSate = {
     status: Status.LOADING //loading success erorr
 };
 
-
 export const fetchItems = createAsyncThunk<Pizza[], SearchPizzaParams>(
     'items/fetchItems',
     async (params) => {
@@ -31,10 +30,12 @@ const pizzaSlice = createSlice({
             state.status = Status.LOADING;
             state.items = [];
         });
+
         builder.addCase(fetchItems.fulfilled, (state, action) => {
             state.items = action.payload;
             state.status = Status.SUCCSESS;
         });
+
         builder.addCase(fetchItems.rejected, (state) => {
             state.status = Status.ERORR;
             state.items = [];

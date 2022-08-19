@@ -3,9 +3,10 @@ import './PageNotFound.scss'
 import { Link } from "react-router-dom";
 
 
-const PageNotFound = () => {
-    return (
+const PageNotFound: React.FC = () => {
 
+
+    return (
         <h1>Page Not Found 😞
             <br />
             <br />
@@ -14,7 +15,6 @@ const PageNotFound = () => {
                 <div className='button__go-back'>Come back</div>
             </Link>
         </h1>
-
     );
 };
 

@@ -20,7 +20,6 @@ const cartSlice = createSlice({
             }
 
             state.totalPrice = calcTotalPrice(state.items)
-
             state.totalCount = calcTotalCount(state.items)
         },
 
@@ -37,7 +36,6 @@ const cartSlice = createSlice({
             }
 
             state.totalPrice = calcTotalPrice(state.items)
-
             state.totalCount = calcTotalCount(state.items)
         },
 
@@ -45,7 +43,6 @@ const cartSlice = createSlice({
             state.items = state.items.filter(item => item.id !== action.payload)
 
             state.totalPrice = calcTotalPrice(state.items)
-
             state.totalCount = calcTotalCount(state.items)
         },
 
@@ -53,7 +50,6 @@ const cartSlice = createSlice({
             state.items = []
 
             state.totalPrice = calcTotalPrice(state.items)
-
             state.totalCount = calcTotalCount(state.items)
         }
 

@@ -13,21 +13,24 @@ const sortListItems: SortList[] = [
 ]
 
 
-const Sort = () => {
+const Sort: React.FC = () => {
+
     const sortRef = useRef<HTMLDivElement>(null);
 
-    const value = useAppSelector(state => state.filter.sort);
     const dispatch = useAppDispatch();
 
+    const value = useAppSelector(state => state.filter.sort);
+
     const [showPopup, setShowPopup] = useState(false)
+
 
     const changeCategory = (i: SortTypes) => {
         dispatch(setsortCategory(i))
         setShowPopup(!showPopup)
     }
 
-    useEffect(() => {
 
+    useEffect(() => {
         const outsideHandleClick = (e: MouseEvent) => {
             if (sortRef.current && !e.composedPath().includes(sortRef.current)) {
                 setShowPopup(false)
@@ -39,7 +42,6 @@ const Sort = () => {
         return () => {
             document.body.removeEventListener('click', outsideHandleClick);
         }
-
     }, [])
 
 

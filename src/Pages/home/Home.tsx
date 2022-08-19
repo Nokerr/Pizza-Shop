@@ -20,12 +20,14 @@ const Home = () => {
 
 
     const fetchPizzas = async () => {
+
         const setCategory = activeCategory > 0 ? 'category=' + activeCategory + '&' : '';
         const sortBy = 'sortBy=' + sortCategory.sortSelector;
         const searchPizza = searchValue ? '&name=' + searchValue : '';
 
         dispatch(fetchItems({ setCategory, sortBy, searchPizza }))
     }
+
 
     useEffect(() => {
 

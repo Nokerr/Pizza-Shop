@@ -24,7 +24,6 @@ const SimpleSlider = () => {
     };
 
 
-
     return (
         <div className='container'>
             <Slider {...settings} style={{

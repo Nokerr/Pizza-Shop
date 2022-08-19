@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 const Categories: React.FC = () => {
 
     const activeCategory = useAppSelector(store => store.filter.categoryId)
+
     const dipatch = useAppDispatch();
 
     const categoriesList = [

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { type } from "os";
 
 type CollapsList = {
     isOpenedCollapse: boolean
