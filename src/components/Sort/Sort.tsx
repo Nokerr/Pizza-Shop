@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './sort.scss'
-import { useSelector, useDispatch } from 'react-redux';
 import { setsortCategory } from '../../redux/filters/filtersSlice'
 import { SortPropertyEnum, SortTypes } from '../../redux/filters/types';
-import { RootState } from '../../redux/store';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+import { SortList } from '../../redux/cart/types';
+
 
 const sortListItems: SortList[] = [
     { name: 'popularity', sortSelector: SortPropertyEnum.RATING_DESC },
@@ -11,16 +12,12 @@ const sortListItems: SortList[] = [
     { name: 'name', sortSelector: SortPropertyEnum.TITLE_DESC }
 ]
 
-type SortList = {
-    name: string;
-    sortSelector: SortPropertyEnum;
-}
 
 const Sort = () => {
     const sortRef = useRef<HTMLDivElement>(null);
 
-    const value = useSelector((state: RootState) => state.filter.sort);
-    const dispatch = useDispatch();
+    const value = useAppSelector(state => state.filter.sort);
+    const dispatch = useAppDispatch();
 
     const [showPopup, setShowPopup] = useState(false)
 

@@ -1,19 +1,18 @@
 import React from 'react';
 import './pizzaListItem.scss'
 import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { addItem, minusItem } from '../../redux/cart/cartSlice.';
 import { Pizza } from '../../redux/pizza/types';
-import { RootState } from '../../redux/store';
 import { selectCartItemById } from '../../redux/pizza/selectors';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+
 
 const PizzaListItem: React.FC<Pizza> = ({ id, name, description, price, img, size, crustType }) => {
 
 
 
-    const dispatch = useDispatch();
-    const item = useSelector(selectCartItemById(id))
-
+    const dispatch = useAppDispatch();
+    const item = useAppSelector(selectCartItemById(id))
 
 
     const [pizzaSize, setPizzaSize] = useState(0);

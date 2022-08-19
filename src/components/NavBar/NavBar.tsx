@@ -4,19 +4,19 @@ import './navBar.scss'
 import { Collapse } from 'react-collapse';
 import CollapsList from '../CollapseList/CollapsList';
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
 import { setIsopendCollapse } from '../../redux/collapsList/collapsListSlice';
 import { selectCard } from '../../redux/cart/selectors';
 import { selectCollaps } from '../../redux/collapsList/selectors';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 
 
 
 const NavBar = () => {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
-    const { totalCount, totalPrice, items } = useSelector(selectCard)
-    const { isOpenedCollapse } = useSelector(selectCollaps)
+    const { totalCount, totalPrice, items } = useAppSelector(selectCard)
+    const { isOpenedCollapse } = useAppSelector(selectCollaps)
 
     const isMounted = useRef(false);
 

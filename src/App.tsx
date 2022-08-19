@@ -7,11 +7,6 @@ import './app.scss'
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footert/Footer";
 
-
-
-
-
-
 function App() {
   return (
     <>

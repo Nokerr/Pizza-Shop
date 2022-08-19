@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import './cart.scss'
 import CartItem from '../../components/CartItem/CartItem';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import { cleareItemList } from '../../redux/cart/cartSlice.';
 import { setIsopendCollapse } from '../../redux/collapsList/collapsListSlice';
 import EmptyCart from '../../components/EmptyCart/EmptyCart';
-import { RootState } from '../../redux/store';
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+
 const Card = () => {
 
-    const dispatch = useDispatch();
-    const { items, totalCount, totalPrice } = useSelector((state: RootState) => state.cart)
+    const dispatch = useAppDispatch();
+    const { items, totalCount, totalPrice } = useAppSelector(state => state.cart)
 
     useEffect(() => {
         dispatch(setIsopendCollapse(false))

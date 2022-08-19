@@ -1,13 +1,13 @@
 import React from "react";
 import './categories.scss'
-import { useSelector, useDispatch } from 'react-redux';
 import { setActiveCategory } from '../../redux/filters/filtersSlice'
+import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 
 
 const Categories: React.FC = () => {
 
-    const activeCategory = useSelector((store: any) => store.filter.categoryId)
-    const dipatch = useDispatch();
+    const activeCategory = useAppSelector(store => store.filter.categoryId)
+    const dipatch = useAppDispatch();
 
     const categoriesList = [
         'All',

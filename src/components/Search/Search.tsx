@@ -2,10 +2,11 @@ import React, { useCallback, useState } from 'react';
 import styles from './search.module.scss';
 import { debounce } from './debounce';
 import { setSearchValue } from '../../redux/filters/filtersSlice';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../hooks/hook';
+
 
 const Search: React.FC = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const [inputValue, setInputValue] = useState('');
 
     const updateSearchValue = useCallback(
