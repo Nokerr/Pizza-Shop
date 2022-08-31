@@ -1,30 +1,107 @@
 * {
     margin: 0px;
     margin-right: 0;
-
     padding: 0px;
     font-family: Roboto, sans-serif;
-
-
 }
 
 
 .container {
-
     width: 1350px;
-
     margin: 0 auto;
     padding: 0 10px;
 }
 
 #root {
-
     background: #f8f8f8;
-
 }
 
 .category__bar {
     margin-top: 60px;
     display: flex;
     justify-content: space-between;
+}
+
+
+@media (max-width: 1449px) {
+    .container {
+        width: 1100px;
+    }
+}
+
+@media (max-width: 1184px) {
+    .container {
+        width: 900px;
+    }
+}
+
+@media (max-width: 950px) {
+    .container {
+        width: 700px;
+    }
+
+    .category__bar {
+        flex-wrap: wrap;
+
+        .categories {
+            margin-bottom: 17px;
+        }
+    }
+
+    .fake-header {
+
+        &__content {
+            grid-template-areas: "phone city";
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__right {
+            display: none;
+        }
+    }
+}
+
+
+@media (max-width: 760px) {
+    .container {
+        width: 570px;
+    }
+
+    .navBar__content-navigation {
+        display: none;
+    }
+
+    .navBar__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        width: 500px;
+    }
+
+    .slick-slider {
+        display: none;
+    }
+
+    .sort__block {
+        margin-top: 17px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 430px;
+    }
+
+
+}
+
+@media (max-width: 450px) {
+    .container {
+        width: 360px;
+    }
+
+
 }
