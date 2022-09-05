@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import SimpleSlider from "../../components/Slider/SimpleSlider";
 import Categories from "../../components/Categories/Categories";
 import Sort from "../../components/Sort/Sort";
@@ -8,6 +8,7 @@ import Spinner from '../../components/Spinner/Spinner';
 import Search from '../../components/Search/Search';
 import { fetchItems } from '../../redux/pizza/pizzaSlice'
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+import MobCartCounter from '../../components/MobCartCounter/MobCartCounter';
 
 const Home = () => {
 
@@ -38,6 +39,9 @@ const Home = () => {
 
     return (
         <>
+            <div className="cart-conter-wrapper">
+                <MobCartCounter />
+            </div>
             <SimpleSlider />
             <div className="container">
                 <div className="category__bar">

@@ -7,11 +7,15 @@
 }
 
 .cart__item {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    justify-content: space-between;
     margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+
 
     &-descr {
+        width: 340px;
         display: flex;
         align-items: center;
 

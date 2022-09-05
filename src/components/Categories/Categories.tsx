@@ -20,18 +20,18 @@ const Categories: React.FC = () => {
 
     return (
         <div className="categories">
-            <ul>
+            <div className="categories-wrapper">
                 {categoriesList.map((category, index) =>
                 (
-                    <li
+                    <div
                         key={index}
-                        className={activeCategory === index ? 'active' : ''}
+                        className={activeCategory === index ? 'categories__item active' : 'categories__item'}
                         onClick={() => dipatch(setActiveCategory(index))}>
                         {category}
-                    </li>
+                    </div>
 
                 ))}
-            </ul>
+            </div>
         </div>
     )
 };

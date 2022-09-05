@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 const NavBar: React.FC = () => {
 
     const isMounted = useRef(false);
+
     const dispatch = useAppDispatch();
 
     const [scroll, setScroll] = useState(true);
@@ -71,9 +72,7 @@ const NavBar: React.FC = () => {
                             <div className="cart-wrapper" >
                                 <div className="cart-counter" onClick={changeCollaps}>{totalCount}</div>
                                 <div className='cart-full-price' onClick={changeCollaps}>{totalPrice}.00 uah</div>
-
                                 <Link to='/card' className="cart-button">Checkout</Link>
-
                             </div>
                             <div className='collapse-wrapper'>
                                 <Collapse isOpened={isOpenedCollapse}>

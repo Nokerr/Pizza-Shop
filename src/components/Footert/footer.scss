@@ -1,4 +1,132 @@
 .footer {
     background-color: #000;
-    height: 328px;
+
+
+    &-container {
+        padding: 1em 2em 2em;
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
+
+    &__contacts {
+        &-header {
+            margin-top: 20px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+
+            .list-item {
+                margin-top: 7px;
+                text-decoration: none;
+                color: #fff;
+                opacity: .6;
+                transition: all .4s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__apps {
+        &-header {
+            margin-top: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        &-wrapper {
+            background-color: #2e2e2e;
+            border-radius: 0.5em;
+            width: 273px;
+            height: 42px;
+            display: flex;
+            justify-content: space-between;
+            padding: 2px;
+
+            .apps-divider {
+                height: 40px;
+                width: 1px;
+                background-color: rgb(140, 140, 140);
+            }
+
+            .apps_google_play {
+                width: 120px;
+                margin: 3px 3px 3px 10px;
+                margin-right: 3px;
+                cursor: pointer;
+                opacity: .6;
+                transition: all .4s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            .apps_app_store {
+                cursor: pointer;
+                opacity: .6;
+                transition: all .4s;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__paymant {
+        &-header {
+            margin-top: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+
+        }
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__social_media {
+        &-header {
+            margin-top: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        &-icons {
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+
+            .social_media-icon {
+                svg {
+                    width: 25px;
+                    height: 25px;
+                    cursor: pointer;
+                    fill: #8d8d8d;
+                    transition: all .4s;
+
+                    &:hover {
+                        fill: #eaeaea;
+                    }
+                }
+
+            }
+        }
+    }
 }

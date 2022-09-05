@@ -6,6 +6,7 @@ import Card from "./Pages/cart/Card";
 import './app.scss'
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footert/Footer";
+import MobCartCounter from "./components/MobCartCounter/MobCartCounter";
 
 function App() {
 
