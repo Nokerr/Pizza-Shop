@@ -8,11 +8,14 @@ import { setIsopendCollapse } from '../../redux/collapsList/collapsListSlice';
 import { selectCard } from '../../redux/cart/selectors';
 import { selectCollaps } from '../../redux/collapsList/selectors';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+import { selectBurgerMemu } from '../../redux/burgerMenu/selectors';
+import { setisBurgerMenuOpen } from '../../redux/burgerMenu/burgerMenuSlice';
 
 
 const NavBar: React.FC = () => {
 
     const [activeLink, setActiveLink] = useState(0);
+
 
     const linksList = [
         { link: '/', name: 'Pizza' },
@@ -28,7 +31,7 @@ const NavBar: React.FC = () => {
 
     const { totalCount, totalPrice, items } = useAppSelector(selectCard)
     const { isOpenedCollapse } = useAppSelector(selectCollaps)
-
+    const { isBurgerMenuOpen } = useAppSelector(selectBurgerMemu)
 
     useEffect(() => {
         if (isMounted.current) {
@@ -69,6 +72,14 @@ const NavBar: React.FC = () => {
                     <div className="navBar__content">
                         <div className="navBar__content-logo">
                             <Link to='/'><span>D</span>uvl <span>P</span>izza</Link>
+                        </div>
+                        <div className="navBar__content-burger_menu">
+                            <div className="burger_wrapper">
+                                <div
+                                    className={isBurgerMenuOpen ? "menu-btn__burger" : "menu-btn__burger active"}
+                                    onClick={() => dispatch(setisBurgerMenuOpen(!isBurgerMenuOpen))}>
+                                </div>
+                            </div>
                         </div>
                         <div className="navBar__content-navigation">
                             {linksList.map((item, index) => {

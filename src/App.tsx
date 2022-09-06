@@ -8,6 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footert/Footer";
 import Contacts from "./Pages/contacts/Contacts";
 import LocationPage from "./Pages/location/LocationPage";
+import BurgerMenu from "./components/BurgerMenu/BurgerMenu";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <>
       <Header />
       <NavBar />
+      <BurgerMenu />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/card" element={<Card />} />

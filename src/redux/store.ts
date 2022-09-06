@@ -3,6 +3,7 @@ import filter from './filters/filtersSlice';
 import cart from './cart/cartSlice.';
 import collaps from './collapsList/collapsListSlice'
 import pizza from './pizza/pizzaSlice'
+import burgerMenu from "./burgerMenu/burgerMenuSlice";
 
 
 export const store = configureStore({
@@ -10,7 +11,8 @@ export const store = configureStore({
         filter,
         cart,
         collaps,
-        pizza
+        pizza,
+        burgerMenu
     }
 });
 

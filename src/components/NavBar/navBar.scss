@@ -19,6 +19,64 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
 
+        &-burger_menu {
+            display: none;
+            justify-content: end;
+            position: relative;
+
+            .burger_wrapper {
+                margin-top: 15px;
+                margin-right: 5px;
+
+
+                cursor: pointer;
+
+                .menu-btn__burger {
+                    width: 25px;
+                    height: 2px;
+                    background-color: #ddd;
+                    border: radius 1px;
+                    transition: all .5s ease-in-out;
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 25px;
+                        height: 2px;
+                        background-color: #ddd;
+                        transition: all .5s ease-in-out;
+                    }
+
+                    &::before {
+                        transform: translateY(-7px);
+                    }
+
+
+                    &::after {
+                        transform: translateY(7px);
+                    }
+                }
+
+                .active {
+                    transform: translateX(-50px);
+                    background: transparent;
+
+                    &::before {
+                        transform: rotate(45deg) translate(35px, -35px);
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg) translate(35px, 35px);
+                    }
+                }
+
+
+
+            }
+
+
+        }
 
         &-cart {
             display: flex;

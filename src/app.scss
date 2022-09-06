@@ -117,6 +117,10 @@
     .cart__header {
         margin-top: 30px;
     }
+
+    .navBar__content-burger_menu {
+        display: flex;
+    }
 }
 
 @media (max-width: 690px) {
@@ -146,6 +150,11 @@
     .sort__block {
         margin-top: 17px;
     }
+
+    .category__bar {
+        margin-top: 30px;
+    }
+
 }
 
 @media (max-width: 550px) {
