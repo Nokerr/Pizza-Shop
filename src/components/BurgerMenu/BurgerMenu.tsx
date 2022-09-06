@@ -16,7 +16,7 @@ const BurgerMenu = () => {
         { link: '/', name: 'Pizza' },
         { link: '/contacts', name: 'Contacts' },
         { link: '/location', name: 'Location' },
-        { link: '/cart', name: 'Cart' }
+        { link: '/card', name: 'Card' }
     ]
 
     const [scroll, setScroll] = useState(true);

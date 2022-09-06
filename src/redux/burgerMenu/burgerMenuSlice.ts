@@ -5,7 +5,7 @@ type BurgerMenu = {
 }
 
 const initialState: BurgerMenu = {
-    isBurgerMenuOpen: false,
+    isBurgerMenuOpen: true,
 }
 
 const burgerMenuSlice = createSlice({
