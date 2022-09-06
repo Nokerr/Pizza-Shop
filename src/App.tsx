@@ -6,7 +6,9 @@ import Card from "./Pages/cart/Card";
 import './app.scss'
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footert/Footer";
-import MobCartCounter from "./components/MobCartCounter/MobCartCounter";
+import Contacts from "./Pages/contacts/Contacts";
+import LocationPage from "./Pages/location/LocationPage";
+
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/card" element={<Card />} />
+        <Route path="/location" element={<LocationPage />} />
+        <Route path="/contacts" element={<Contacts />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

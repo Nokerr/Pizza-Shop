@@ -12,6 +12,14 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 
 const NavBar: React.FC = () => {
 
+    const [activeLink, setActiveLink] = useState(0);
+
+    const linksList = [
+        { link: '/', name: 'Pizza' },
+        { link: '/contacts', name: 'Contacts' },
+        { link: '/location', name: 'Location' }
+    ]
+
     const isMounted = useRef(false);
 
     const dispatch = useAppDispatch();
@@ -63,10 +71,15 @@ const NavBar: React.FC = () => {
                             <Link to='/'><span>D</span>uvl <span>P</span>izza</Link>
                         </div>
                         <div className="navBar__content-navigation">
-                            <a href="/" className='nav-link nav-link_active'>Pizza</a>
-                            <a href="/" className='nav-link'>Drinks</a>
-                            <a href="/" className='nav-link'>Sides</a>
-                            <a href="/" className='nav-link'>Desert</a>
+                            {linksList.map((item, index) => {
+                                return <Link
+                                    key={index}
+                                    to={item.link}
+                                    className={`nav-link ${activeLink == index ? 'nav-link_active' : ''}`}
+                                    onClick={() => setActiveLink(index)}>
+                                    {item.name}
+                                </Link>
+                            })}
                         </div>
                         <div className="navBar__content-cart">
                             <div className="cart-wrapper" >
