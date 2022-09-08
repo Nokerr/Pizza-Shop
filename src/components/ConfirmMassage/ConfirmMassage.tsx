@@ -1,11 +1,19 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
 import { setisconfirmMassageOpen } from '../../redux/confirmMassage/confirmMassageSlice';
+import { useNavigate } from 'react-router-dom';
 import './ConfirmMassage.scss'
 
 const ConfirmMassage = () => {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
     const { isconfirmMassageOpen } = useAppSelector(store => store.confirmMassage)
+
+    const closeWindow = () => {
+        dispatch(setisconfirmMassageOpen(false))
+        navigate('/')
+    }
 
     return (
         <>
@@ -157,7 +165,7 @@ c1.97,0,3.91-0.8,5.3-2.2c1.4-1.39,2.2-3.33,2.2-5.3c0-1.97-0.8-3.91-2.2-5.3C107.4
                         Your order is confirmed <br />
                         We will call you back!
                     </div>
-                    <div className="order-confirmed-massage__btn" onClick={() => dispatch(setisconfirmMassageOpen(false))}>
+                    <div className="order-confirmed-massage__btn" onClick={closeWindow}>
                         <div className="close-btn">
                             <svg viewBox="0 0 24 24"><title /><path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm3.21,11.79a1,1,0,0,1,0,1.42,1,1,0,0,1-1.42,0L12,13.41l-1.79,1.8a1,1,0,0,1-1.42,0,1,1,0,0,1,0-1.42L10.59,12l-1.8-1.79a1,1,0,0,1,1.42-1.42L12,10.59l1.79-1.8a1,1,0,0,1,1.42,1.42L13.41,12Z" /></svg>
                         </div>
