@@ -84,7 +84,6 @@
 
                     &-active {
                         color: #fff;
-                        ;
                         background: #1e1e1e;
                     }
                 }
@@ -107,8 +106,6 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 10px;
-
-
 
                 &-price {
                     font-size: 18px;
@@ -138,7 +135,6 @@
 
                     &:hover {
                         background: #c5142f;
-
                     }
                 }
 
@@ -149,7 +145,6 @@
                     width: 100%;
                     border-radius: 15px;
                     background: #f8f8f8;
-
 
                     .cart-minus {
                         width: 50px;
@@ -191,7 +186,6 @@
 
                     .cart-counter {
                         height: 100%;
-
                         display: flex;
                         -ms-flex-pack: center;
                         justify-content: center;

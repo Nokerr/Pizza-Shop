@@ -21,16 +21,13 @@ const PizzaListItem: React.FC<Pizza> = ({ id, name, description, price, img, siz
         dispatch(addItem({ id }))
     }
 
-
     const removePizza = () => {
         dispatch(minusItem(id))
     }
 
-
     useEffect(() => {
         setPizzaPrice(price[pizzaSize][typeOfCrust])
     }, [pizzaSize, typeOfCrust])
-
 
     const addPizzaToCart = () => {
         const pizzaItem = {

@@ -12,7 +12,6 @@ const sortListItems: SortList[] = [
     { name: 'name', sortSelector: SortPropertyEnum.TITLE_DESC }
 ]
 
-
 const Sort: React.FC = () => {
 
     const sortRef = useRef<HTMLDivElement>(null);
@@ -23,12 +22,10 @@ const Sort: React.FC = () => {
 
     const [showPopup, setShowPopup] = useState(false)
 
-
     const changeCategory = (i: SortTypes) => {
         dispatch(setsortCategory(i))
         setShowPopup(!showPopup)
     }
-
 
     useEffect(() => {
         const outsideHandleClick = (e: MouseEvent) => {
@@ -43,8 +40,6 @@ const Sort: React.FC = () => {
             document.body.removeEventListener('click', outsideHandleClick);
         }
     }, [])
-
-
 
 
     return (

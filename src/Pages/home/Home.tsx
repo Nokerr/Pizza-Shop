@@ -19,7 +19,6 @@ const Home = () => {
     const searchValue = useAppSelector(state => state.filter.searchValue)
     const { items, status } = useAppSelector(state => state.pizza)
 
-
     const fetchPizzas = async () => {
 
         const setCategory = activeCategory > 0 ? 'category=' + activeCategory + '&' : '';
@@ -28,7 +27,6 @@ const Home = () => {
 
         dispatch(fetchItems({ setCategory, sortBy, searchPizza }))
     }
-
 
     useEffect(() => {
 

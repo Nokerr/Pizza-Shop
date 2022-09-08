@@ -3,7 +3,7 @@ import { useAppDispatch } from '../../hooks/hook';
 import { setIsopendCollapse } from '../../redux/collapsList/collapsListSlice';
 import './contacts.scss'
 
-const Contavts = () => {
+const Contavts: React.FC = () => {
 
     const dispatch = useAppDispatch();
 

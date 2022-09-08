@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import './cart.scss'
 import CartItem from '../../components/CartItem/CartItem';
-import { Link } from 'react-router-dom';
 import { cleareItemList } from '../../redux/cart/cartSlice.';
 import { setIsopendCollapse } from '../../redux/collapsList/collapsListSlice';
 import EmptyCart from '../../components/EmptyCart/EmptyCart';
@@ -13,7 +12,6 @@ const Card: React.FC = () => {
     const dispatch = useAppDispatch();
 
     const { items, totalCount, totalPrice } = useAppSelector(state => state.cart)
-
 
     useEffect(() => {
         dispatch(setIsopendCollapse(false))
