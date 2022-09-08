@@ -25,7 +25,6 @@ const OrderForm: React.FC = () => {
     return (
 
         <>
-
             <form
                 onSubmit={handleSubmit((data: any) => {
                     dispatch(cleareItemList())
@@ -35,7 +34,7 @@ const OrderForm: React.FC = () => {
                 <div className="input">
                     <div className="input__phone">
                         <label>Phone</label>
-                        <input type='number' {...register("phone", { required: true })} placeholder='+380 00 000 00 00' />
+                        <input type='tel' {...register("phone", { required: true })} placeholder='+380 00 000 00 00' />
                         {errors.phone && <p>Enter your Phone</p>}
                     </div>
                     <div className="input__name">
@@ -47,7 +46,6 @@ const OrderForm: React.FC = () => {
                         {errors.name && <p>Enter your name</p>}
                     </div>
                 </div>
-
                 <div className="cart__bottom-buttons">
                     <Link to='/' className="go-back_button">Go back</Link>
                     <input className="checkout_button" type="submit" value='Checkout' />

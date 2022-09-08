@@ -5,7 +5,7 @@ type confirmMassage = {
 }
 
 const initialState: confirmMassage = {
-    isconfirmMassageOpen: true,
+    isconfirmMassageOpen: false,
 }
 
 const confirmMassageSlice = createSlice({
