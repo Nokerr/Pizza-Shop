@@ -1,19 +1,11 @@
-## Available Scripts
+Description: Pizza shop with shopping cart, sorting and searching for goods
 
-In the project directory, you can run:
+Technologies stack: React, Redux Toolkit,  React Router, Axios, react-hook-form, TypeScript, SCSS, HTML .
 
-### `npm start`
+Deployed Project Link: https://pizza-shop-brown.vercel.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+1. npm i
+2. npm start
 
