@@ -19,7 +19,7 @@ const Header: React.FC = () => {
                         <span><img src={location_icon} alt="location" /></span>
                         <a href="" className='fake-header__city-name' >Kyiv</a>
                     </div>
-                    <div className="fake-header__right">
+                    {/* <div className="fake-header__right">
                         <div className="fake-header__language">
                             <select className='fake-header__language-button' defaultValue='Eng'>
                                 <option value="eng">eng</option>
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
                         <div className="fake-header__sing-in">
                             <button className='fake-header__sing-in-button'>Sing in</button>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </header>

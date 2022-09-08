@@ -9,6 +9,7 @@ import Footer from "./components/Footert/Footer";
 import Contacts from "./Pages/contacts/Contacts";
 import LocationPage from "./Pages/location/LocationPage";
 import BurgerMenu from "./components/BurgerMenu/BurgerMenu";
+import ConfirmMassage from "./components/ConfirmMassage/ConfirmMassage";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Header />
       <NavBar />
       <BurgerMenu />
+      <ConfirmMassage />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/card" element={<Card />} />

@@ -6,6 +6,7 @@ import { cleareItemList } from '../../redux/cart/cartSlice.';
 import { setIsopendCollapse } from '../../redux/collapsList/collapsListSlice';
 import EmptyCart from '../../components/EmptyCart/EmptyCart';
 import { useAppDispatch, useAppSelector } from '../../hooks/hook';
+import OrderForm from '../../components/OrderForm/OrderForm';
 
 const Card: React.FC = () => {
 
@@ -47,14 +48,12 @@ const Card: React.FC = () => {
                                 <div className="total-counter">Total pizzas: <span>{totalCount} pcs.</span></div>
                                 <div className="total-price">Order price: <span>{totalPrice} uah</span></div>
                             </div>
-                            <div className="cart__bottom-buttons">
-                                <Link to='/' className="go-back_button">Go back</Link>
-                                <div className="checkout_button">Checkout</div>
-                            </div>
+                            <OrderForm />
                         </div>
                     </div> :
                     <EmptyCart />
             }
+
         </div>
 
     );

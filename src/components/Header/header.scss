@@ -7,11 +7,12 @@
     display: flex;
     justify-content: center;
 
+
     &__content {
-        display: grid;
-        grid-template-areas: 'phone city . right-block';
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 20px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+
     }
 
     &__right {

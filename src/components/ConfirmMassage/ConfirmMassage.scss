@@ -1,0 +1,45 @@
+.order-confirmed-massage {
+    position: fixed;
+    z-index: 100;
+    background-color: rgb(91, 91, 91);
+    width: 250px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    box-shadow: 0px 0px 1000px 1000px rgba(211, 211, 211, 0.938);
+
+    &__icon {
+        position: absolute;
+        width: 50px;
+        top: 52px;
+        left: 100px;
+    }
+
+    &__text {
+        text-align: center;
+        margin-top: 120px;
+        color: #ddd;
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    &__btn {
+        position: relative;
+
+        svg {
+            width: 40px;
+            position: absolute;
+            right: 8px;
+            top: -174px;
+            fill: rgb(34, 34, 34);
+            cursor: pointer;
+            transition: all .4s;
+
+            &:hover {
+                fill: rgb(222, 222, 222);
+            }
+        }
+    }
+}

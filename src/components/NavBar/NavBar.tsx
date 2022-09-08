@@ -74,10 +74,11 @@ const NavBar: React.FC = () => {
                             <Link to='/'><span>D</span>uvl <span>P</span>izza</Link>
                         </div>
                         <div className="navBar__content-burger_menu">
-                            <div className="burger_wrapper">
+                            <div
+                                className="burger_wrapper"
+                                onClick={() => dispatch(setisBurgerMenuOpen(!isBurgerMenuOpen))}>
                                 <div
-                                    className={isBurgerMenuOpen ? "menu-btn__burger" : "menu-btn__burger active"}
-                                    onClick={() => dispatch(setisBurgerMenuOpen(!isBurgerMenuOpen))}>
+                                    className={isBurgerMenuOpen ? "menu-btn__burger" : "menu-btn__burger active"}>
                                 </div>
                             </div>
                         </div>
