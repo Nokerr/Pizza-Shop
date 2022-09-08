@@ -7,20 +7,21 @@ import { useAppDispatch } from '../../hooks/hook';
 
 const CartItem: React.FC<CartItemType> = ({ id, name, price, img, size, crustType, count }) => {
 
+
     const dispatch = useAppDispatch();
 
     const addPizza = () => {
-        dispatch(addItem({ id }))
+        dispatch(addItem({ id, price }))
     }
 
 
     const minusCounter = () => {
-        dispatch(minusItem(id))
+        dispatch(minusItem({ id, price }))
     }
 
 
     const removePizza = () => {
-        dispatch(removeItem(id))
+        dispatch(removeItem({ id, price }))
     }
 
 

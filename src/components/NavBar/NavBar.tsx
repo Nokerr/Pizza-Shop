@@ -15,7 +15,7 @@ import { setisBurgerMenuOpen } from '../../redux/burgerMenu/burgerMenuSlice';
 const NavBar: React.FC = () => {
 
     const [activeLink, setActiveLink] = useState(0);
-
+    const collapsRef = useRef<HTMLDivElement>(null);
 
     const linksList = [
         { link: '/', name: 'Pizza' },
@@ -41,7 +41,6 @@ const NavBar: React.FC = () => {
         isMounted.current = true
     }, [items])
 
-
     useEffect(() => {
         if (totalCount > 0) {
             dispatch(setIsopendCollapse(true))
@@ -50,14 +49,12 @@ const NavBar: React.FC = () => {
         }
     }, [totalCount])
 
-
     useEffect(() => {
         window.addEventListener("scroll", () => {
             setScroll(window.scrollY < 50);
         });
 
     }, []);
-
 
     const changeCollaps = () => {
         dispatch(setIsopendCollapse(!isOpenedCollapse))
@@ -87,14 +84,14 @@ const NavBar: React.FC = () => {
                                 return <Link
                                     key={index}
                                     to={item.link}
-                                    className={`nav-link ${activeLink == index ? 'nav-link_active' : ''}`}
+                                    className={`nav-link ${activeLink === index ? 'nav-link_active' : ''}`}
                                     onClick={() => setActiveLink(index)}>
                                     {item.name}
                                 </Link>
                             })}
                         </div>
                         <div className="navBar__content-cart">
-                            <div className="cart-wrapper" >
+                            <div className="cart-wrapper" ref={collapsRef}>
                                 <div className="cart-counter" onClick={changeCollaps}>{totalCount}</div>
                                 <div className='cart-full-price' onClick={changeCollaps}>{totalPrice}.00 uah</div>
                                 <Link to='/card' className="cart-button">Checkout</Link>

@@ -11,18 +11,28 @@ const PizzaListItem: React.FC<Pizza> = ({ id, name, description, price, img, siz
 
     const dispatch = useAppDispatch();
 
-    const item = useAppSelector(selectCartItemById(id))
-
     const [pizzaSize, setPizzaSize] = useState(0);
     const [typeOfCrust, setTypeOfCrurst] = useState(0);
     const [pizzaPrice, setPizzaPrice] = useState(0);
 
+    const item = useAppSelector(selectCartItemById(id + price[pizzaSize][typeOfCrust] + id))
+
+    const pizzaItem = {
+        id: id + price[pizzaSize][typeOfCrust] + id,
+        name,
+        description,
+        price: price[pizzaSize][typeOfCrust],
+        img,
+        size: size[pizzaSize],
+        crustType: crustType[typeOfCrust],
+    }
+
     const addPizza = () => {
-        dispatch(addItem({ id }))
+        dispatch(addItem(pizzaItem))
     }
 
     const removePizza = () => {
-        dispatch(minusItem(id))
+        dispatch(minusItem({ id, price }))
     }
 
     useEffect(() => {
@@ -30,15 +40,6 @@ const PizzaListItem: React.FC<Pizza> = ({ id, name, description, price, img, siz
     }, [pizzaSize, typeOfCrust])
 
     const addPizzaToCart = () => {
-        const pizzaItem = {
-            id,
-            name,
-            description,
-            price: price[pizzaSize][typeOfCrust],
-            img,
-            size: size[pizzaSize],
-            crustType: crustType[typeOfCrust],
-        }
         dispatch(addItem(pizzaItem))
     }
 

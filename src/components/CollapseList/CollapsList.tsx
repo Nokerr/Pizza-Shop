@@ -8,17 +8,17 @@ const CollapsList: React.FC<CartItemType> = ({ id, name, description, price, siz
     const dispatch = useAppDispatch();
 
     const addPizza = () => {
-        dispatch(addItem({ id }))
+        dispatch(addItem({ id, price }))
     }
 
 
     const minusCounter = () => {
-        dispatch(minusItem(id))
+        dispatch(minusItem({ id, price }))
     }
 
 
     const removePizza = () => {
-        dispatch(removeItem(id))
+        dispatch(removeItem({ id, price }))
     }
 
 
