@@ -33,8 +33,8 @@ const Contavts: React.FC = () => {
                         <div className="contacts__block-mail">
                             <span>Emails</span>
                             <div className="mails-list">
-                                <a href="">duvlpizza@email.com</a>
-                                <a href="">supportduvlpizza@email.com</a>
+                                <a href="mailto:duvlpizza@email.com">duvlpizza@email.com</a>
+                                <a href="mailto:supportduvlpizza@email.com">supportduvlpizza@email.com</a>
                             </div>
                         </div>
                     </div>

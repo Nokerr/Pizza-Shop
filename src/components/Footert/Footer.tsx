@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
                             <div className="footer__contacts-header">CONTACTS</div>
                             <div className="footer__contacts-list">
                                 <a href="tel:+380441112233" className="list-item ">044-111-22-33</a>
-                                <a href="/" className="list-item">Send complaint</a>
+                                <a href="mailto:supportduvlpizza@email.com" className="list-item">Send complaint</a>
                                 <a href="mailto:duvlpizza@email.com" className="list-item">duvlpizza@email.com</a>
                             </div>
                         </div>

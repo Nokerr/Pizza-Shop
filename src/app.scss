@@ -64,9 +64,12 @@ button::-moz-focus-inner {
     }
 
     .category__bar {
+        justify-content: space-around;
         flex-wrap: wrap;
+    }
 
-
+    .categories-wrapper {
+        justify-content: space-around;
     }
 
     .fake-header {

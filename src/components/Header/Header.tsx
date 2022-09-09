@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './header.scss'
 import location_icon from '../../assets/icons/location-icon.png';
 import phone_icon from '../../assets/icons/phone_icon.png';
 
 
 const Header: React.FC = () => {
+
+    const cityList = ['Kyiv', 'Lviv', 'Krakov'];
+
+    const [showPopup, setShowPopup] = useState(false)
+    const [activeCity, setActiveCity] = useState(0);
+
+    const changeActiveCity = (index: number) => {
+        setActiveCity(index)
+        setShowPopup(false)
+    }
 
 
     return (
@@ -15,10 +25,27 @@ const Header: React.FC = () => {
                         <span><img src={phone_icon} alt="phone" /></span>
                         <a href="tel:+380442221122" className='fake-header__phone-number'>044 222 11 22</a>
                     </div>
-                    <div className="fake-header__city">
-                        <span><img src={location_icon} alt="location" /></span>
-                        <a href="" className='fake-header__city-name' >Kyiv</a>
+
+                    <div className="fake-header__city-btn">
+                        <div className="fake-header__city__wrapper">
+                            <span><img src={location_icon} alt="location" /></span>
+                            <div className='fake-header__city-name' onClick={() => setShowPopup(!showPopup)} >{cityList[activeCity]}</div>
+                        </div>
+
+                        <div className={showPopup ? "city-popup city-popup-active" : 'city-popup'}>
+                            <ul className="city-popup__list">
+                                {cityList.map((item, index) => {
+                                    return <li
+                                        key={index}
+                                        onClick={() => changeActiveCity(index)}
+                                        className={activeCity === index ? 'city-popup__item city-popup__item-active' : 'city-popup__item'}
+                                    >{item}</li>
+                                })}
+                            </ul>
+                        </div>
                     </div>
+
+
                     {/* <div className="fake-header__right">
                         <div className="fake-header__language">
                             <select className='fake-header__language-button' defaultValue='Eng'>
