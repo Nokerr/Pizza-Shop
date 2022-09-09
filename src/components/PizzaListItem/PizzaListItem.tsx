@@ -53,7 +53,7 @@ const PizzaListItem: React.FC<Pizza> = ({ id, name, description, price, img, siz
                 <div className="pizza-list__item-title">{name}</div>
                 <div className="pizza-list__item-descr">
                     <p>{description}</p>
-                    <a href="/">Replace ingredients</a>
+                    {/* <a href="/">Replace ingredients</a> */}
                 </div>
                 <div className="pizza-list__item-details">
                     <div className="ditails_size">
